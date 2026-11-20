@@ -82,7 +82,7 @@ Add your introduction to your step-by-step-guide, including a title, time requir
 
             <hr>
             <p><b>Assembly time:</b> 5-10 minutes<br>
-              <b>Awesome rating:</b> 15% awesome</p>
+              <b>Awesome rating:</b> 95% awesome</p>
             <hr>
 
             <p>Want to make using your MacBook easier? Whether you're writing an article or working on a creative project, keyboard shortcuts can save time. This guide will teach you eight simple MacBook commands that every journalism student should know. All you need is your MacBook and a few minutes to practice!</p>
@@ -188,8 +188,8 @@ with a paragraph to create a photo with a caption.
  <!-- A new step -->
           <li>
             <div class="content">
-              <h3>Take a Screenshot (Command + Shift + 3)</h3>
-              <p>Hold down Command (⌘) and Shift, then press 3. Your cursor will change into a crosshair. Click and drag to select the part of your screen you want to capture, then release to take the screenshot.</p> 
+              <h3>Take a Screenshot (Command + Shift + 4)</h3>
+              <p>Hold down Command (⌘) and Shift, then press 4. Your cursor will change into a crosshair. Click and drag to select the part of your screen you want to capture, then release to take the screenshot.</p> 
             </div>
           </li>
  <!-- A new step -->
@@ -234,245 +234,405 @@ Customise the visual style and appearance of your guide.
 - Be aware, you can break your page quite easily with this part of CSS.
 -->         
 
-    <style media="screen" type="text/css">
+    
+<style media="screen" type="text/css">
 
-      /* STRUCTURAL ELEMENTS */
+/* STRUCTURAL ELEMENTS */
 
-      html {
-        position: relative;
-        min-height: 100%;
-        min-width: 100%;
-        width: 100%;
-        margin: 0px;
-        padding: 0px;
-        overflow-x: hidden; 
-      }
-      
-      body {
-        margin:0 0 130px;
-        width:100%;
-        font-weight:normal;
-        font-family:Arial, sans-serif;         /* CHANGE THE FONT HERE */
-        color:#555;         /* CHANGE THE FONT COLOR HERE */
-      }  
+html {
+  position: relative;
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
 
-      /* PAGE LAYOUT */
+* {
+  box-sizing: border-box;
+}
 
-      header, footer {
-        padding:5%;
-        border:0 10%;
-        background-color:#A1D0EB;          /* CHANGE THE HEADER AND FOOTER COLOR HERE */
-        width:100%;
-        margin:0px;        
-      }
-
-      footer {
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        position: float;
-        height:70px;
-      }
-
-      header img {
-        padding-right: 10%;
-        position: relative;
-      }
-
-      .wrapper {
-        width:80%;
-        max-width:650px;
-        margin:0 auto;
-        padding:30px;
-      }
-      
-      
-      /* BASIC STYLES FOR THE PAGE */
-      
-      a {
-        color:#1593A1;         /* CHANGE THE LINK COLOR HERE */
-        font-weight:bold;
-      }
-
-      /* Heading styles */
-      h1 {
-        margin:0;
-        width:100%;
-        font-weight:bold;
-        font-family:Arial, sans-serif;          /* CHANGE THE HEADER FONT HERE */
-      }
-
-      h2, h3, h4 {
-        margin:0 0 0.5em;
-        padding-top: 10px;
-        font-weight:normal;
-      }
-
-      /* Paragraph Text styles */
-      p {
-        margin:16px 0;
-        line-height:1.4;
-        font-weight:normal;
-      }
-
-      /* Styles for unordered lists <ul> */
-      ul {
-        font-family:"Courier New", Courier, monospace;
-        box-shadow:0px 2px 10px #ddd;
-        background-color: #D3E3E8;          /* CHANGE THE THINGS BACKGROUND COLOR HERE */
-        border: 1px solid #555;           /* CHANGE THE THINGS BORDER HERE */
-        padding:0;
-        margin:2em 0 0;
-        position:relative;
-        z-index:200;
-
-      }
-
-      /* Styles for unordered list items <li> */
-      ul li {
-        list-style-type: none;
-        border-top: 1px dotted #555; 
-        font-size:14px;
-        color:#000;
-        height: auto;
-        padding: 7px 10px 5px 25px;
-        list-style-type: square;
-        list-style-position: inside;
-        color:#333;
-      }
-
-      .content {
-        background: #fff;          /* CHANGE THE INSTRUCTION BACKGROUND COLOR HERE */
-      }
-
-      .step-by-step li:before {
-        background: #D3E3E8;          /* CHANGE THE INSTRUCTION NUMBER BACKGROUND COLOR HERE */
-        border-top-left-radius: 50px;          /* CHANGE THE INSTRUCTION SHAPE HERE */
-        border-bottom-left-radius: 50px;
-      }
+body {
+  margin: 0;
+  width: 100%;
+  font-weight: normal;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #253241;
+  background-color: #fff;
+}
 
 
-      /* Object styles */
-      .step-by-step img,
-      .step-by-step iframe {
-        width:100%;
-        margin-bottom:10px;
-      }
+/* PAGE LAYOUT */
 
-      img.logo {
-        width:auto;
-        height:100%;
-      }
+header, footer {
+  background-color: #253241;
+  width: 100%;
+  margin: 0;
+  color: #fff;
+}
 
+header {
+  padding: 35px 5%;
+  min-height: 170px;
+  display: flow-root;
+  border-bottom: 5px solid #82744a;
+}
 
-      /* ADVANCED STYLES*/
+footer {
+  position: static;
+  height: auto;
+  padding: 25px 5%;
+  margin-top: 20px;
+  border-top: 5px solid #82744a;
+}
 
-      /* Styles for the guide introduction wrapper */
-      .introduction {
-        padding:0px;
-        position:relative;
-        margin-bottom:40px;
-        overflow:hidden;
-        background:#fff;
-      }
+header img {
+  float: right;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  padding-right: 0;
+  margin-left: 20px;
+  position: relative;
+}
 
-      hr {
-        border: 0; 
-        height: 0; 
-        border-top: 1px solid #D3E3E8; 
-      }
-
-
-      ul li:first-child {
-        list-style-type: none;
-        border-top: none;
-      }
-
-
-      /* Hover state styles for list items inside unordered list <li> */
-      ul li:hover {
-        background-color: #eedc9c;
-      }
-
-
-      /* Step by step instructions */
-      .step-by-step {  
-        padding:0;
-        position: relative;
-        z-index:0;
-        margin-left:40px;
-      }
-      .step-by-step li {
-        position: relative;
-        text-align: left;
-        list-style-type: decimal;
-        margin-bottom:20px;
-      }
-      .step-by-step li ol {
-        margin-top:20px;
-      }
-      .step-by-step li li {
-        list-style-type: lower-alpha;
-      }
-      .step-by-step .media-content {
-        position:relative;
-      }
-      .step-by-step .media-content img {
-        display:block;
-        margin:0;
-        width:100%;
-        height:auto;
-      }
-      .step-by-step .media-content .caption {
-        position:absolute;
-        padding:0.5em 1em;
-      }
-      .step-by-step .media-content iframe {
-        display:block;
-        margin:0;
-      }
-
-      /* Content for each step */
-      .content {
-        padding: 20px;
-        margin-bottom:10px;
-        border-radius: 0px 5px 5px 5px;
-        box-shadow: 0px 0px 7px 0px rgba(0,0,0,.25);           
-      }       
-
-      /* Advanced CSS for item number styling */
-      .step-by-step li:before {
-        content: "";
-        width: 40px;
-        height:80px;
-        position: absolute;
-        top:0;
-        left:-40px;
-        z-index:-1;
-        background: #D3E3E8; 
-        border-top-left-radius: 50px;
-        border-bottom-left-radius: 50px;
-      }
-
-      /* Styles for sub-list item numbering */
-      .step-by-step li li:before {
-        background: #333; 
-      }
+.wrapper {
+  width: 90%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 35px 0 15px;
+}
 
 
-      /* Footer credits */
-      footer {
-        margin-top:50px;
-      }
-      footer p {
-        font-size:12px;
-        color:#000;
-      }
+/* BASIC STYLES FOR THE PAGE */
 
-      a img {
-        border:none;
-      }
-    </style>
+a {
+  color: #625738;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:visited {
+  color: #625738;
+}
+
+a:hover {
+  color: #374b61;
+}
+
+
+/* HEADING STYLES */
+
+h1 {
+  margin: 0;
+  width: 100%;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.5px;
+  color: #253241;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+header h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 12px;
+}
+
+h2, h3, h4 {
+  margin: 0 0 0.5em;
+  padding-top: 10px;
+  font-weight: 500;
+  color: #374b61;
+}
+
+.introduction h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+
+/* PARAGRAPH TEXT */
+
+p {
+  margin: 16px 0;
+  line-height: 1.6;
+  font-weight: normal;
+}
+
+.caption {
+  font-size: 14px;
+  color: #625738;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+
+/* THINGS YOU'LL NEED LIST */
+
+ul {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-shadow: 0 2px 10px rgba(18,25,32,0.10);
+  background-color: rgba(73,100,129,0.10);
+  border: 1px solid #496481;
+  border-radius: 6px;
+  padding: 0;
+  margin: 2em 0 0;
+  position: relative;
+  z-index: 200;
+  overflow: hidden;
+}
+
+ul li {
+  border-top: 1px dotted #496481;
+  font-size: 15px;
+  color: #253241;
+  height: auto;
+  padding: 10px 15px 10px 25px;
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+ul li:first-child {
+  list-style-type: none;
+  border-top: none;
+  background-color: rgba(73,100,129,0.13);
+}
+
+ul li:first-child h2 {
+  font-weight: bold;
+  color: #253241;
+  font-size: 21px;
+}
+
+ul li:hover {
+  background-color: rgba(130,116,74,0.13);
+}
+
+
+/* INSTRUCTION BACKGROUND */
+
+.content {
+  background: #fff;
+  padding: 24px;
+  margin-bottom: 10px;
+  border-radius: 0 8px 8px 8px;
+  border: 1px solid rgba(73,100,129,0.18);
+  box-shadow: 0 3px 12px rgba(18,25,32,0.12);
+  color: #253241;
+}
+
+.content h3 {
+  color: #253241;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.content p {
+  line-height: 1.6;
+}
+
+
+/* INSTRUCTION NUMBER BACKGROUND */
+
+.step-by-step li:before {
+  background: rgba(130,116,74,0.25);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+
+/* OBJECT STYLES */
+
+.step-by-step img,
+.step-by-step iframe {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.step-by-step img {
+  height: auto;
+}
+
+.step-by-step iframe {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+img.logo {
+  width: auto;
+  height: 100%;
+}
+
+
+/* ADVANCED STYLES */
+
+/* Guide introduction */
+
+.introduction {
+  padding: 0;
+  position: relative;
+  margin-bottom: 40px;
+  overflow: hidden;
+  background: #fff;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 2px solid #82744a;
+}
+
+
+/* STEP-BY-STEP INSTRUCTIONS */
+
+.step-by-step {
+  padding: 0;
+  position: relative;
+  z-index: 0;
+  margin-left: 40px;
+}
+
+.step-by-step li {
+  position: relative;
+  text-align: left;
+  list-style-type: decimal;
+  margin-bottom: 24px;
+  color: #253241;
+}
+
+.step-by-step li::marker {
+  color: #413a25;
+  font-weight: bold;
+}
+
+.step-by-step li ol {
+  margin-top: 20px;
+}
+
+.step-by-step li li {
+  list-style-type: lower-alpha;
+}
+
+.step-by-step .media-content {
+  position: relative;
+}
+
+.step-by-step .media-content img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+
+.step-by-step .media-content .caption {
+  position: absolute;
+  padding: 0.5em 1em;
+}
+
+.step-by-step .media-content iframe {
+  display: block;
+  margin: 0;
+}
+
+
+/* NUMBER SHAPE */
+
+.step-by-step li:before {
+  content: "";
+  width: 40px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: -40px;
+  z-index: -1;
+  background: rgba(130,116,74,0.25);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+/* Sub-list numbering */
+
+.step-by-step li li:before {
+  background: #413a25;
+}
+
+
+/* FOOTER CREDITS */
+
+footer p {
+  font-size: 13px;
+  color: #fff;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+footer a,
+footer a:visited {
+  color: #fff;
+  text-decoration-color: #82744a;
+  text-decoration-thickness: 2px;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration-color: #fff;
+}
+
+a img {
+  border: none;
+}
+
+
+/* MOBILE SCREEN ADJUSTMENTS */
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 25px 5%;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .introduction h1 {
+    font-size: 28px;
+  }
+
+  .wrapper {
+    width: 90%;
+    padding: 25px 0;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  footer {
+    padding: 25px 5%;
+  }
+}
+
+</style>
 
   </body>
 </html>
